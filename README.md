@@ -1,4 +1,4 @@
-# The ArtBox
+# Projet 4 OCR
 
 Ce projet contient : 
 * Le code initial du projet The ArtBox pour réaliser le projet 4 du parcours PHP/Symfony sur la branche `main`.
