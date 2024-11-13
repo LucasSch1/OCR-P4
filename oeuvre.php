@@ -13,6 +13,12 @@
     
     $oeuvre = $requete->fetch();
 
+        // Vérification des résultats
+    if ($requete->rowCount() === 0) {
+        header("Location: index.php");
+        exit; // TStop l'éxecution du script
+    }
+
     // Si aucune oeuvre trouvé, on redirige vers la page d'accueil
     if(is_null($oeuvre)) {
         header('Location: index.php');
