@@ -8,15 +8,15 @@
         header('Location: index.php');
     }
 
+    // Préparation de la requete SQL à envoyer
     $requete = $bdd->prepare('SELECT * FROM oeuvres WHERE id = ?');
-    $requete->execute([$_GET['id']]);
+    $requete->execute([$_GET['id']]); // Envoi de la requete SQL avec l'id recupérer de la variable superglobale $_GET
     
-    $oeuvre = $requete->fetch();
+    $oeuvre = $requete->fetch(); //Récupère la prochaine ligne de résultat de la requête
 
         // Vérification des résultats
     if ($requete->rowCount() === 0) {
         header("Location: index.php");
-        exit; // Stop l'éxecution du script
     }
 
     // Si aucune oeuvre trouvé, on redirige vers la page d'accueil
